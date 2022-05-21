@@ -4,7 +4,6 @@ const path = require('path');
 const currentPath = path.join(__dirname, 'text.txt');
 const { stdin } = process;
 
-// Begin reading from stdin so the process does not exit.
 process.stdin.resume();
 console.log('hello, you can write something here, and I add it to text.txt');
 const output = fs.createWriteStream(currentPath, 'utf-8');
