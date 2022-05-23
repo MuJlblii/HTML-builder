@@ -12,16 +12,16 @@ output.on('error', error => console.log('Something`re going wrong, look at this 
 stdin.on('error', error => console.log('Something is going wrong, look at this error', error.message));
 
 process.on('SIGINT', () => {
-    console.log('Thank you! Goodbye');
-    process.exit();
+  console.log('Thank you! Goodbye');
+  process.exit();
 });
 
 stdin.on('data', data => {
-    if (data.toString().trimEnd() !== 'exit') {
-        output.write(data.toString());
+  if (data.toString().trimEnd() !== 'exit') {
+    output.write(data.toString());
 
-    } else {
-        console.log('Thank you! Goodbye');
-        process.exit();
-    }
+  } else {
+    console.log('Thank you! Goodbye');
+    process.exit();
+  }
 });
